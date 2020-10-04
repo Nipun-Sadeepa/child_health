@@ -4,10 +4,10 @@
 	                   
 	if(isset($_POST['submit'])){
 		$reg=$_POST['reg_no'];
-	  	$pw=$_POST['input_pwrd'];
-	  	$hpw=sha1($pw);
+	  	$pass=$_POST['input_passrd'];
+	  	$hpass=sha1($pass);
 
-		$query = "SELECT * FROM reacc_details WHERE registration_no='{$reg}' AND passworddb='{$pw}' ";
+		$query = "SELECT * FROM reacc_details WHERE registration_no='{$reg}' AND passworddb='{$pass}' ";
         $result=mysqli_query($con,$query);
         $x=mysqli_num_rows($result);
 		if($x==1){
@@ -70,7 +70,7 @@
 	<div class="details">
 		<form action="" method="post">
 			<input type="text" name="reg_no" placeholder="Enter Your Registration Number" required>
-			<input type="password" name="input_pwrd" placeholder="Enter Your Password" required>
+			<input type="password" name="input_passrd" placeholder="Enter Your Password" required>
 			<!-- <input type="text" name="lecture" placeholder="Enter the lecture code"> -->
 		</div><!-- details -->
 		<div class="submission">  
